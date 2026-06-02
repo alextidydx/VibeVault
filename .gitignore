@@ -1,0 +1,14 @@
+.DS_Store
+/sentence-transformers
+/client/node_modules/
+/client/.vite/
+/client/dist/
+/client/.react-router/
+/client/build/
+/BK_JUNE_1
+/__pycache__
+/config.json
+/*.db
+/*.index
+/*.index.mapping.json
+/*.sqbpro

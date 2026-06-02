@@ -1,0 +1,12 @@
+decord
+easyocr
+faiss-cpu
+flask
+numpy
+Pillow
+psutil
+rapidfuzz
+sentence-transformers
+torch
+tqdm
+watchdog

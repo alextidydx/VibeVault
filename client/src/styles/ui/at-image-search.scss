@@ -1,0 +1,72 @@
+.e__image-dd {
+}
+
+.e__image-dd__overlay {
+	position: fixed;
+	z-index: 100000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	transition: opacity 0.2s linear, background 0.2s linear;
+	background: rgba(255, 255, 255, 0.6);
+	opacity: 0.0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.e__results-bar--dragging  & {
+		opacity: 1.0;
+	}
+}
+
+.e__image-dd__overlay-text {
+	display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px;
+    border: 4px dashed #7e00ff;
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.e__image-dd__query-image-block {
+	transition: opacity 0.1s linear, width 0.1s ease-out;
+	width: 0.0px;
+	opacity: 0.0;
+	pointer-events: none;
+	display: flex;
+	.e__results-bar--image-search & {
+		width: 54.0px;
+		background: #d2c0ff;
+		border-radius: 6px 0px 0px 6px;
+		border: solid 1px #a37fff;
+		border-right: 0;
+		opacity: 1.0;
+		pointer-events: all;
+	}
+	img {
+		width: 30px;
+		height: 30px;
+		margin: 4px 4px 4px 0;
+		border-radius: 4px;
+		object-fit: cover;
+		background: #24212d;
+		border: solid 1px #a37fff;
+	}
+	button {
+		padding: 0 2px;
+		color: #a37fff;
+		background: transparent;
+		box-shadow: none;
+		transition: none; 
+		&:hover {
+		}
+	}
+}
+
+.e__image-dd__query-small-preview {
+}
+
+.e__image-dd__query-delete-btn {
+}

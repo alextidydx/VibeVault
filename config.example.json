@@ -1,0 +1,29 @@
+{
+  "folders": [
+    {
+      "id": 0,
+      "path": "C:/Users/you/Pictures"
+    }
+  ],
+  "image_exts": [
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".jfif",
+    ".webp"
+  ],
+  "vid_exts": [
+    ".avi",
+    ".mp4",
+    ".mpeg4",
+    ".mov",
+    ".mkv"
+  ],
+  "db_path": "files.db",
+  "host": "0.0.0.0",
+  "port": 5002,
+  "public_folder": "public",
+  "model_desc_url": "clip-ViT-L-14",
+  "default_search_number": 1000,
+  "files_watchdog_delay": 20.0
+}

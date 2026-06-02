@@ -1,0 +1,28 @@
+RewriteEngine On
+
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
+
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+# Begin cache control #
+# ExpiresActive on
+# ExpiresActive off
+# <FilesMatch ".*">
+# Header unset Cache-Control
+# Header unset Expires
+# Header unset Last-Modified
+# FileETag None
+# Header unset Pragma
+# </FilesMatch>
+
+# html5 pushstate (history) support:
+<ifModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !index
+    RewriteRule (.*) /index.html [L]
+</ifModule>

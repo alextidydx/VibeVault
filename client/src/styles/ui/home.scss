@@ -1,0 +1,124 @@
+@keyframes spinner {
+	0%   {  transform: translate(-50%, -50%) rotate(0); }
+	100%  { transform: translate(-50%, -50%)rotate(359deg); }
+}
+.e__results-form__btn-logo {
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	opacity: 0.8;
+	transition: opacity 400ms linear;
+	background: url('/assets/images/logo.svg');
+	flex-shrink: 0;
+  	margin-right: 10px;
+	&:hover {
+		opacity: 1.0;
+	}
+}
+
+.e__results-bar {
+	width: 100%;
+	display: flex;
+	position: relative;
+	padding: 0px 0px 50px 0px;
+	.e__results-bar--loading & {
+		&::before {
+			opacity: 0.0;
+		}
+		&::after {
+			opacity: 0.0;
+		}
+	}
+
+	&::before {
+		content: '';
+		width: 30px;
+		height: 30px;
+		left: 50%;
+		bottom: 0%;
+		position: absolute;
+		opacity: 0.3;
+		animation: spinner 2.0s infinite linear;
+		transition: opacity 400ms linear;
+		transform: translate(-50%, -50%);
+		background: url('/assets/images/loader.svg');
+		z-index: 1;
+	}
+	&::after {
+		content: '';
+		width: 30px;
+		height: 30px;
+		left: 50%;
+		bottom: 0%;
+		position: absolute;
+		opacity: 0.1;
+		animation: spinner 2.0s infinite linear;
+		transition: opacity 400ms linear;
+		transform: translate(-50%, -50%);
+		background: url('/assets/images/loader-bk.svg');
+	}
+	.at__body--no-loading & {
+		&::before {
+			opacity: 0.0;
+		}
+		&::after {
+			opacity: 0.0;
+		}
+	}
+}
+.e__results-title {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	padding: 15px 15px;
+	height: 70px;
+	box-sizing: border-box;
+	transition: box-shadow 400ms linear;
+	z-index: 100;
+	.e__body--shadow & {
+		box-shadow: 0px 0px 5px 3px rgba(0, 0, 127, 0.05);
+	}
+}
+
+.e__results-form {
+	top: 0px;
+	left: 0px;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}
+
+.e__results-form__input {
+	width: 100%;
+	max-width: 800px;
+	flex-shrink: 1;
+	border-radius:  8px 0px 0px 8px;
+	transition: border-radius 0.1s linear;
+	.e__results-bar--image-search & {
+		border-radius:  0px 0px 0px 0px;
+	}
+}
+
+.e__results-form__btn {
+	flex-shrink: 0;
+	border-radius: 0px 8px 8px 0px;
+}
+
+.e__results-form__btn-refresh {
+	margin-left: 15px;
+}
+
+.e__results-block {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 75px 15px 15px 15px;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	align-items: flex-start;
+}
