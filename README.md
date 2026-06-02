@@ -4,6 +4,8 @@
 
 VibeVault is a local media search app for images, GIFs, and videos. It indexes a folder on your machine, generates visual embeddings, extracts OCR text, and serves a small web UI for searching your media by text or by image.
 
+When you search with text, the backend combines fuzzy filename matches, fuzzy OCR text matches, and CLIP/Faiss semantic matches into one ranked result list. You can also search by image by dragging and dropping an image into the frontend; the backend embeds that image and finds visually similar media in the Faiss index. For videos and GIFs, VibeVault samples frames, embeds those frames, and collapses results so each file appears once with its best score.
+
 ## Features
 
 - Semantic image search using CLIP embeddings.
@@ -261,17 +263,6 @@ Videos:
 - `.mkv`
 
 GIF support is handled in code with `.gif`.
-
-## How Search Works
-
-For a text query, the backend combines:
-
-1. Fuzzy filename matches.
-2. Fuzzy OCR text matches.
-3. CLIP/Faiss semantic matches.
-4. Search by image: drag and drop an image into the frontend, and the backend embeds it to find visually similar media in the Faiss index.
-
-For videos and GIFs, the backend samples frames, embeds those frames, and stores vectors under the same media id. Search results are collapsed so each file appears once with its best score.
 
 ## Local Files Created by the App
 
